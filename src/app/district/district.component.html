@@ -1,0 +1,61 @@
+<!-- Modern District Component Template -->
+<div class="district-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <h1 class="hero-title">Discover Kerala</h1>
+      <p class="hero-subtitle">
+        Journey through 14 magnificent districts, each telling its own story of culture, 
+        nature, and heritage in God's Own Country
+      </p>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-container">
+        <div class="stat-item">
+          <span class="stat-number">14</span>
+          <span class="stat-label">Districts</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">44</span>
+          <span class="stat-label">Hill Stations</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">900+</span>
+          <span class="stat-label">Beaches</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">∞</span>
+          <span class="stat-label">Memories</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Districts Grid -->
+  <section class="districts-grid">
+    <div class="container">
+      <div class="grid-container">
+        @for (district of mockdata; track district.id) {
+          <div class="district-card" (click)="navigateToDistrict(district.id)">
+            <div class="card-image-container">
+              <img [src]="district.image" [alt]="district.title" class="card-image" />
+              <div class="card-overlay"></div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">{{ district.title }}</h3>
+              <p class="card-description">{{ district.description }}</p>
+              <button class="explore-btn" (click)="navigateToDistrict(district.id)">
+                <i class="fas fa-compass me-2"></i>
+                Explore Now
+              </button>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+</div>
